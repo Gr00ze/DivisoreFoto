@@ -17,6 +17,7 @@ import java.text.NumberFormat;
 
 public class App {
     private static final int width = 360, height= 470;
+
     private static File file;
     private static JFrame mainFrame;
     private static JPanel mainpanel;
@@ -24,6 +25,7 @@ public class App {
     private static XPanel imgpanel;
     private static ImageIcon toedit;
     public static void start(){
+        //window settings
         mainFrame = new JFrame("Divisore Foto");
         mainFrame.setSize(new Dimension(width,height));
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,6 +34,7 @@ public class App {
         mainFrame.setVisible(true);
         mainFrame.setResizable(false);
 
+        //window component
         mainpanel = new JPanel(new BorderLayout());
         mainFrame.add(mainpanel);
         //top
@@ -71,7 +74,7 @@ public class App {
         mainpanel.add(bottompanel,BorderLayout.SOUTH);
         bottompanel.revalidate();
 
-
+        //buttons behaviour
         loadbutton.addActionListener(e -> {
             JFileChooser filechooser = new JFileChooser();
             filechooser.setDragEnabled(true);
@@ -107,6 +110,7 @@ public class App {
             mainpanel.repaint();
             mainpanel.revalidate();
         });
+
         confirmbutton.addActionListener(e1 -> {
             JFileChooser folderchooser = new JFileChooser();
             folderchooser.setFileFilter(new FileFilter() {
@@ -148,7 +152,7 @@ public class App {
 
     loadTheme();
     }
-
+    //render theme
     private static void loadTheme() {
         Color c1 = Color.BLACK;
         Color c2 = Color.WHITE;
